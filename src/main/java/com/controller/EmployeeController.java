@@ -75,25 +75,22 @@ public class EmployeeController {
          return map;
     }
 
-    @RequestMapping(value = "/phoneLogin",method = RequestMethod.POST)
+    @RequestMapping(value = "/phoneLogin")
     @ResponseBody
     public Map<String,Object> phoneLogin(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         String token =request.getHeader("accessToken");
-        String id = JwtSignUtils.getUserId(token);
-        int a = Integer.parseInt(id);
-        String username = JwtSignUtils.getUserName(token);
         Map<String,Object> map = new HashMap<>();
          String phone = request.getParameter("phone");
          String code  = request.getParameter("code");
          Date date = (Date)request.getSession().getAttribute("CodeDate");
         String oldCode = (String)request.getSession().getAttribute("code");
          Date now = new Date();
-         if((now.getTime()-date.getTime())>60000){
+         if((now.getTime()-date.getTime())>6000000){
              map.put(CommonRest.SUCCESS,false);
              map.put(CommonRest.MSG,"验证码已过期，请重新发送");
              return map;
         }
-         if(!code.equals(oldCode) || code=="" || code==null){
+         if(!code.equals(oldCode) || code== "" || code==null){
              map.put(CommonRest.SUCCESS,false);
              map.put(CommonRest.MSG,"验证码错误");
              return map;

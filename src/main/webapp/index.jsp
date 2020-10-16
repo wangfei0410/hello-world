@@ -31,7 +31,7 @@
         <div class="col-md-12 column">
             <div class="page-header">
                 <h1>
-                    图书管理系统
+                    用户管理系统
                 </h1>
             </div>
         </div>

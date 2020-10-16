@@ -146,7 +146,7 @@
 </div>
 <script src="../statics/js/jquery-3.4.1.js"></script>
 <script>
-
+    var token;
 
     function loginFn() {
         var phone = $("#tel_num").val();
@@ -155,7 +155,7 @@
         this.time_inter();
         $.ajax({
             url: "http://localhost:8080/sys/phoneLogin",
-            type: "POST",
+                type: "GET",
             data: {
                 'phone': phone,
                 'code': code,
@@ -164,6 +164,7 @@
             success: function (data) {
                 console.log(data)
                 if (data.success) {
+                    token= data.data
                     window.location.href = 'index';
                 } else {
                     alert(data.message)

@@ -33,9 +33,9 @@
     </bean>
 <!--    <mvc:interceptors>-->
 <!--        <mvc:interceptor>-->
-<!--            &lt;!&ndash; 拦截所有URL中包含/user/的请求 &ndash;&gt;-->
-<!--            <mvc:mapping path="/sys/user/**"/>-->
-<!--            <mvc:exclude-mapping path="/sys/user/phoneSms"/>-->
+<!--            &lt;!&ndash; 拦截所有URL中包含/sys/的请求 &ndash;&gt;-->
+<!--            <mvc:mapping path="/sys/**"/>-->
+<!--            <mvc:exclude-mapping path="/sys/lo"/>-->
 <!--            <bean class="com.common.Interceptor.AdminInterceptor"></bean>-->
 <!--        </mvc:interceptor>-->
 <!--    </mvc:interceptors>-->
