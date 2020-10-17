@@ -86,10 +86,10 @@ public class JwtSignUtils {
     /**
      * 获取token中的userId
      */
-    public static String getUserId(String token) throws UnsupportedEncodingException {
+    public static String getUserId(String token) {
+            DecodedJWT decode = JWT.decode(token);
+            String userId = decode.getClaim("userId").asString();
+            return userId;
 
-        DecodedJWT decode = JWT.decode(token);
-        String userId = decode.getClaim("userId").asString();
-        return userId;
     }
 }

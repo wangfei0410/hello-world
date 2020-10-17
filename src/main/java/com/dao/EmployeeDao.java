@@ -29,4 +29,13 @@ public interface EmployeeDao {
      * @return
      */
     Employee findUserByPhone(String phone);
+
+    /**
+     * 删除
+     * @param id
+     */
+    Integer deleteUserInfo(int id);
+
+
+
 }

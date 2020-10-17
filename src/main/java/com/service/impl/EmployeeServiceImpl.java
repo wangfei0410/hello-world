@@ -64,6 +64,25 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     /**
+     * 注销用户信息
+     * @param id
+     * @return
+     */
+    @Override
+    public Map<String,Object> deleteUserInfo(int id) {
+        Map<String, Object> map = new HashMap<>();
+        try {
+            employeeDao.deleteUserInfo(id);
+            map.put(CommonRest.SUCCESS, true);
+            map.put(CommonRest.MSG, "注销成功");
+        }catch (Exception e){
+            map.put(CommonRest.SUCCESS,false);
+            map.put(CommonRest.MSG,"注销失败");
+    }
+        return map;
+    }
+
+    /**
      * 手机发送验证码
      * @param phone
      * @return

@@ -26,6 +26,13 @@ public interface EmployeeService {
     Map<String,Object> upDateUserInfo(Employee employee);
 
     /**
+     * 删除用户信息
+     * @param id
+     * @return
+     */
+    Map<String,Object> deleteUserInfo(int id);
+
+    /**
      * 发送短息接口
      * @param phone
      * @return
